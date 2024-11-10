@@ -1,64 +1,92 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explosão de Sabores - Restaurante</title>
-    <meta property="og:title" content="Explosão de Sabores - Restaurante"/>
-    <meta name="robots" content="index, follow">
-    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" type="image/png" href="/icons/favicon-32x32.png" sizes="32x32">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="styles.css">
+    <title>Explosão de Sabores - Pizzaria</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
+    <!-- Cabeçalho -->
     <header>
-        <h1>Bem-vindo ao Explosão de Sabores</h1>
+        <div class="logo">
+            <h1>Explosão de Sabores</h1>
+            <p>A melhor pizza da cidade!</p>
+        </div>
         <nav>
-            <a href="#menu">Menu</a> | 
-            <a href="#reservas">Reservas</a> | 
-            <a href="#contato">Contato</a> | 
-            <a href="#sobre">Sobre Nós</a>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#menu">Cardápio</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
         </nav>
     </header>
-    <div class="container">
-        <section id="menu">
-            <h2>Nosso Menu</h2>
-            <ul>
-                <li>Pizza calabresa - R$ 29,90</li>
-                <li>Pizza brócolis - R$ 39,90</li>
-                <li>Pizza lombo - R$ 49,90</li>
-                <li>Pizza Picanha - R$ 59,90</li>
-            </ul>
-        </section>
-        <section id="reservas">
-            <h2>Faça sua Reserva</h2>
-            <form id="reservationForm">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" required>
-                <label for="date">Data:</label>
-                <input type="date" id="date" required>
-                <label for="time">Hora:</label>
-                <input type="time" id="time" required>
-                <button type="submit">Reservar</button>
-            </form>
-            <p id="reservationMessage"></p>
-        </section>
-        <section id="contato">
-            <h2>Contato</h2>
-            <p>Você pode nos encontrar em: Rua da Sabor, 123, Cidade Gourmet.</p>
-            <p>Email: contato@explosaodesabores.com</p>
-            <p>Telefone: (11) 1234-5678</p>
-        </section>
-        <section id="sobre">
-            <h2>Sobre Nós</h2>
-            <p>O Explosão de Sabores é um restaurante que oferece a melhor experiência gastronômica com pratos elaborados por chefs renomados.</p>
-        </section>
-    </div>
+
+    <!-- Seção Início -->
+    <section id="home">
+        <div class="intro">
+            <h2>Bem-vindo à Explosão de Sabores!</h2>
+            <p>Experimente as melhores pizzas artesanais, feitas com ingredientes frescos e de qualidade.</p>
+            <button onclick="window.location.href='#menu'">Veja nosso cardápio</button>
+        </div>
+        <div class="pizza-image">
+            <img src="https://images.unsplash.com/photo-1568025329-50b7989878b7" alt="Pizza deliciosa" />
+        </div>
+    </section>
+
+    <!-- Seção Cardápio -->
+    <section id="menu">
+        <h2>Nosso Cardápio</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1570152582680-24584b072d4c" alt="Pizza Margherita">
+                <h3>Pizza Margherita</h3>
+                <p>Tomate, mussarela, manjericão fresco e azeite de oliva</p>
+                <p class="price">R$ 39,99</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1604013708366-d20ab3f05731" alt="Pizza Calabresa">
+                <h3>Pizza Calabresa</h3>
+                <p>Calabresa, cebola roxa e azeitonas pretas</p>
+                <p class="price">R$ 42,99</p>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1604013708367-fc4a9d29ffcf" alt="Pizza Quatro Queijos">
+                <h3>Pizza Quatro Queijos</h3>
+                <p>Mussarela, gorgonzola, parmesão e provolone</p>
+                <p class="price">R$ 45,99</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="sobre">
+        <h2>Sobre nós</h2>
+        <p>Na Explosão de Sabores, nossa missão é oferecer uma experiência gastronômica inesquecível. A cada mordida, você vai sentir o sabor da tradição e a qualidade dos ingredientes frescos.</p>
+    </section>
+
+    <!-- Seção Contato -->
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <form id="contact-form">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Rodapé -->
     <footer>
-        <p>&copy; 2024 Explosão de Sabores. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Explosão de Sabores - Todos os direitos reservados</p>
     </footer>
-    <script src="scripts.js"></script>
 </body>
 </html>

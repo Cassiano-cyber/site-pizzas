@@ -6,87 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explosão de Sabores - Restaurante</title>
     <meta property="og:title" content="Explosão de Sabores - Restaurante"/>
-    <meta name="twitter:title" content="Explosão de Sabores - Restaurante"/>
-    <meta name="og:image:alt" content="Restaurante Explosão de Sabores"/>
     <meta name="robots" content="index, follow">
     <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180">
     <link rel="icon" type="image/png" href="/icons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="/icons/favicon-16x16.png" sizes="16x16">
     <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="theme-color" content="#2196f3">
-    <meta property="og:site_name" content="Explosão de Sabores"/>
-    <meta name="twitter:card" content="summary"/>
-    <meta property="og:image" content="https://example.com/images/restaurante.jpg">
-    <meta property="twitter:image" content="https://example.com/images/restaurante.jpg">
-    <style>
-        /* Estilo geral */
-        html {
-            font-size: 100%; 
-            line-height: 1.6; 
-            box-sizing: border-box;
-        }
-        *, *::before, *::after {
-            box-sizing: inherit;
-        }
-        body {
-            margin: 0; 
-            font-family: 'Arial', sans-serif; 
-            background-color: #f9f9f9; 
-            color: #333;
-            padding: 0 20px;
-        }
-        
-        /* Estilos do header */
-        header {
-            background: #5a5a5a; 
-            color: #fff; 
-            padding: 20px 0; 
-            text-align: center;
-        }
-        header h1 {
-            margin: 0; 
-            font-size: 2.5em; 
-            text-transform: uppercase;
-        }
-        nav a {
-            color: #fff; 
-            padding: 10px 15px; 
-            text-decoration: none; 
-            transition: background 0.3s;
-        }
-        nav a:hover {
-            background: #2196f3; 
-            border-radius: 5px;
-        }
-
-        /* Estilos do container */
-        .container {
-            max-width: 1200px; 
-            margin: auto; 
-            padding: 20px;
-        }
-        section {
-            margin-bottom: 40px; 
-            padding: 20px; 
-            background: #fff; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        section h2 {
-            font-size: 2em; 
-            margin-bottom: 10px;
-            color: #2196f3;
-        }
-
-        /* Estilos do footer */
-        footer {
-            text-align: center; 
-            padding: 20px; 
-            background: #333; 
-            color: #fff;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -94,28 +18,47 @@
         <nav>
             <a href="#menu">Menu</a> | 
             <a href="#reservas">Reservas</a> | 
-            <a href="#contato">Contato</a>
+            <a href="#contato">Contato</a> | 
+            <a href="#sobre">Sobre Nós</a>
         </nav>
     </header>
     <div class="container">
         <section id="menu">
             <h2>Nosso Menu</h2>
-            <p>Explore nossas delícias culinárias, preparadas com ingredientes frescos e de qualidade.</p>
-            <!-- Adicione uma lista de pratos aqui -->
+            <ul>
+                <li>Pizza calabresa - R$ 29,90</li>
+                <li>Pizza brócolis - R$ 39,90</li>
+                <li>Pizza lombo - R$ 49,90</li>
+                <li>Pizza Picanha - R$ 59,90</li>
+            </ul>
         </section>
         <section id="reservas">
             <h2>Faça sua Reserva</h2>
-            <p>Entre em contato conosco para garantir sua mesa.</p>
-            <!-- Formulário de reserva ou informações de contato -->
+            <form id="reservationForm">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" required>
+                <label for="date">Data:</label>
+                <input type="date" id="date" required>
+                <label for="time">Hora:</label>
+                <input type="time" id="time" required>
+                <button type="submit">Reservar</button>
+            </form>
+            <p id="reservationMessage"></p>
         </section>
         <section id="contato">
             <h2>Contato</h2>
             <p>Você pode nos encontrar em: Rua da Sabor, 123, Cidade Gourmet.</p>
-            <!-- Informações de contato adicionais -->
+            <p>Email: contato@explosaodesabores.com</p>
+            <p>Telefone: (11) 1234-5678</p>
+        </section>
+        <section id="sobre">
+            <h2>Sobre Nós</h2>
+            <p>O Explosão de Sabores é um restaurante que oferece a melhor experiência gastronômica com pratos elaborados por chefs renomados.</p>
         </section>
     </div>
     <footer>
-        <p>&copy; 2023 Explosão de Sabores. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Explosão de Sabores. Todos os direitos reservados.</p>
     </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>

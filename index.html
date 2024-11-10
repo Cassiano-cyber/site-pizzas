@@ -4,89 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explosão de Sabores - Pizzaria</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Cabeçalho -->
+    <!-- Barra de navegação -->
     <header>
         <div class="logo">
-            <h1>Explosão de Sabores</h1>
-            <p>A melhor pizza da cidade!</p>
+            <img src="https://www.designi.com.br/images/preview/10006042.jpg" alt="Explosão de Sabores Logo">
         </div>
         <nav>
             <ul>
                 <li><a href="#home">Início</a></li>
                 <li><a href="#menu">Cardápio</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
                 <li><a href="#contato">Contato</a></li>
-                <li><a href="#sobre">Sobre</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Seção Início -->
-    <section id="home">
-        <div class="intro">
-            <h2>Bem-vindo à Explosão de Sabores!</h2>
-            <p>Experimente as melhores pizzas artesanais, feitas com ingredientes frescos e de qualidade.</p>
-            <button onclick="window.location.href='#menu'">Veja nosso cardápio</button>
-        </div>
-        <div class="pizza-image">
-            <img src="https://images.unsplash.com/photo-1568025329-50b7989878b7" alt="Pizza deliciosa" />
+    <!-- Seção Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Explosão de Sabores: A Melhor Pizzaria Artesanal</h1>
+            <p>Sabores que encantam, ingredientes frescos e um toque de amor em cada pizza.</p>
+            <a href="#menu" class="btn">Veja nosso cardápio</a>
         </div>
     </section>
 
-    <!-- Seção Cardápio -->
-    <section id="menu">
+    <!-- Seção de Cardápio -->
+    <section id="menu" class="menu">
         <h2>Nosso Cardápio</h2>
-        <div class="menu-items">
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1570152582680-24584b072d4c" alt="Pizza Margherita">
+        <div class="pizza-cards">
+            <div class="pizza-card">
+                <img src="https://images.pexels.com/photos/5327356/pexels-photo-5327356.jpeg" alt="Pizza Margherita">
                 <h3>Pizza Margherita</h3>
-                <p>Tomate, mussarela, manjericão fresco e azeite de oliva</p>
-                <p class="price">R$ 39,99</p>
+                <p>Queijo mozzarella, molho de tomate, manjericão fresco e azeite de oliva.</p>
+                <span class="price">R$ 40,00</span>
             </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1604013708366-d20ab3f05731" alt="Pizza Calabresa">
-                <h3>Pizza Calabresa</h3>
-                <p>Calabresa, cebola roxa e azeitonas pretas</p>
-                <p class="price">R$ 42,99</p>
+            <div class="pizza-card">
+                <img src="https://images.pexels.com/photos/4308716/pexels-photo-4308716.jpeg" alt="Pizza Pepperoni">
+                <h3>Pizza Pepperoni</h3>
+                <p>Fatias crocantes de pepperoni, queijo e molho de tomate.</p>
+                <span class="price">R$ 45,00</span>
             </div>
-            <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1604013708367-fc4a9d29ffcf" alt="Pizza Quatro Queijos">
-                <h3>Pizza Quatro Queijos</h3>
-                <p>Mussarela, gorgonzola, parmesão e provolone</p>
-                <p class="price">R$ 45,99</p>
+            <div class="pizza-card">
+                <img src="https://images.pexels.com/photos/2082294/pexels-photo-2082294.jpeg" alt="Pizza Vegana">
+                <h3>Pizza Vegana</h3>
+                <p>Deliciosos vegetais frescos e molho de tomate, sem queijo.</p>
+                <span class="price">R$ 42,00</span>
             </div>
         </div>
     </section>
 
     <!-- Seção Sobre -->
-    <section id="sobre">
-        <h2>Sobre nós</h2>
-        <p>Na Explosão de Sabores, nossa missão é oferecer uma experiência gastronômica inesquecível. A cada mordida, você vai sentir o sabor da tradição e a qualidade dos ingredientes frescos.</p>
+    <section id="sobre" class="about">
+        <h2>Sobre Nós</h2>
+        <p>A Explosão de Sabores é uma pizzaria que se dedica a criar pizzas de alta qualidade, com ingredientes frescos e saborosos. Cada pizza é feita com muito carinho, buscando proporcionar a melhor experiência gastronômica aos nossos clientes.</p>
     </section>
 
-    <!-- Seção Contato -->
-    <section id="contato">
+    <!-- Seção de Contato -->
+    <section id="contato" class="contact">
         <h2>Entre em Contato</h2>
-        <form id="contact-form">
-            <label for="name">Nome:</label>
-            <input type="text" id="name" name="name" required>
+        <form action="submit_form.php" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
 
-            <label for="email">E-mail:</label>
+            <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="message">Mensagem:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
 
-            <button type="submit">Enviar</button>
+            <button type="submit" class="btn">Enviar</button>
         </form>
     </section>
 
     <!-- Rodapé -->
-    <footer>
+    <footer class="footer">
         <p>&copy; 2024 Explosão de Sabores - Todos os direitos reservados</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

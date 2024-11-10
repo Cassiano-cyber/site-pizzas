@@ -67,7 +67,7 @@ document.getElementById('checkoutButton').addEventListener('click', () => {
     orderDetails += `\nTotal: R$ ${total.toFixed(2)}`;
 
     // Substitua pelo número do seu WhatsApp
-    const phoneNumber = '+559999999999'; 
+    const phoneNumber = '+5517996780618'; 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(orderDetails)}`;
 
     window.open(whatsappUrl, '_blank');

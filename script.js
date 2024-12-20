@@ -72,3 +72,26 @@ document.getElementById('checkoutButton').addEventListener('click', () => {
 
     window.open(whatsappUrl, '_blank');
 });
+
+// Função para criar as bolinhas dos fogos de artifício
+function createFireworkParticle() {
+  const particle = document.createElement('div');
+  particle.classList.add('firework-particle');
+  particle.style.top = `${Math.random() * 100}%`;
+  particle.style.left = `${Math.random() * 100}%`;
+  particle.style.backgroundColor = `hsl(${Math.random() * 360}, 50%, 50%)`;
+  particle.style.animationDelay = `${Math.random() * 2}s`;
+  return particle;
+}
+
+// Função para criar os fogos de artifício
+function createFireworks() {
+  const container = document.querySelector('.fireworks-container');
+  for (let i = 0; i < 10; i++) {
+    const particle = createFireworkParticle();
+    container.appendChild(particle);
+  }
+}
+
+// Chama a função para criar os fogos de artifício quando a página carregar
+window.onload = createFireworks;

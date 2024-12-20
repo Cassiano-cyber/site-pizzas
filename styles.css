@@ -1,108 +1,254 @@
+/* Importa as fontes */
+@import url('https://fonts.googleapis.com/css2?family=Dramaturgia+Cuba&family=Dancing+Script:wght@400;700&display=swap');
+
+/* Normalização de CSS */
+@import url('https://cdn.jsdelivr.net/npm/normalize.css/normalize.css');
+
+/* Variáveis CSS */
+:root {
+    --primary-color: #ff6347; /* Vermelho vibrante para a explosão */
+    --secondary-color: #ffd700; /* Amarelo para o sabor */
+    --background-color: #f5ddb0; /* Bege claro para um fundo aconchegante */
+    --text-color: #b7870e; /* Marrom para contraste */
+    --white-color: #ffffff;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --explosion-color: #ff8c00; /* Laranja vibrante para a explosão */
+    --animation-duration: 2s; /* Duração da animação */
+}
+
+/* Estilos Globais */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Dramaturgia Cuba', 'Dancing Script', cursive;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
+    font-size: 1.3rem;
+    color: var(--text-color);
+    overflow-x: hidden; /* Remove a barra de rolagem horizontal */
 }
 
+/* Header */
 header {
-    background-color: #ff6347;
-    color: white;
-    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 1.5em 0;
     text-align: center;
+    box-shadow: var(--box-shadow);
+    font-size: 1.5em;
+    position: relative; /* Para posicionar a animação */
 }
 
-header .logo {
-    width: 150px;
-    margin-bottom: 10px;
+/* Animação de explosão no header */
+header::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: var(--explosion-color);
+    opacity: 0;
+    animation: explosion var(--animation-duration) infinite alternate;
 }
 
-h1 {
-    font-size: 2.5em;
+@keyframes explosion {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    50% {
+        width: 100px;
+        height: 100px;
+        opacity: 0.5;
+    }
+    100% {
+        width: 200px;
+        height: 200px;
+        opacity: 0;
+    }
+}
+
+/* Menu de Navegação */
+nav ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
-}
-
-main {
     display: flex;
-    justify-content: space-around;
-    padding: 20px;
+    justify-content: center;
+    gap: 2em;
 }
 
-.menu, .cart {
-    width: 45%;
+nav ul li {
+    position: relative;
 }
 
-.menu-item {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.menu-item img {
-    width: 100%;
-    height: auto;
-    max-width: 300px;
-    border-radius: 10px;
-}
-
-.menu-item h3 {
-    font-size: 1.5em;
-    margin-top: 10px;
-}
-
-.menu-item p {
+nav ul li a {
+    text-decoration: none;
+    color: var(--secondary-color);
     font-size: 1.2em;
-    margin: 10px 0;
+    padding: 0.5em 0;
+    display: block;
 }
 
-button {
-    background-color: #ff6347;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1em;
-    border-radius: 5px;
+nav ul li a:hover {
+    text-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color), 0 0 30px var(--secondary-color);
 }
 
-button:hover {
-    background-color: #d9534f;
-}
-
-.cart {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-ul li {
-    font-size: 1.2em;
-    margin: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.delete-item {
-    background-color: transparent;
-    border: none;
-    color: red;
-    font-size: 1.5em;
-    cursor: pointer;
-}
-
-.delete-item:hover {
-    color: darkred;
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    header {
+        padding: 1em 0;
+    }
+    nav ul li a {
+        font-size: 1em;
+    }
 }
 
 footer {
+    background-color: var(--primary-color);
+    color: var(--white-color);
     text-align: center;
+    padding: 1em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.3rem;
+}
+
+/* Seção Principal */
+section {
+    display: block;
+    unicode-bidi: isolate;
+    padding: 2em;
+    text-align: center;
+    margin-bottom: 2em;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    font-size: 1.3rem;
+    background-color: var(--background-color);
+}
+
+/* Seção de Pizzas */
+#pizzas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
     padding: 20px;
-    background-color: #ff6347;
-    color: white;
+}
+
+/* Estilos para as imagens */
+.pizza-item img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* Transição para o efeito hover */
+}
+
+/* Efeito hover para as pizzas */
+.pizza-item img:hover {
+    transform: scale(1.1); /* Aumenta o tamanho da imagem */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta a sombra */
+}
+
+/* Estilos para as pizzas */
+.pizza-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f5ddb0;
+}
+
+.pizza-item h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.pizza-item p {
+    font-size: 1em;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.pizza-item button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.pizza-item button:hover {
+    background-color: var(--explosion-color);
+}
+
+/* Estilos para o rodapé */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 1em 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.3rem;
+}
+
+/* Animação de ingredientes saltando */
+.pizza-item img::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: var(--explosion-color);
+    opacity: 0;
+    animation: ingredientJump var(--animation-duration) infinite alternate;
+}
+
+@keyframes ingredientJump {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        width: 20px;
+        height: 20px;
+        opacity: 0.5;
+        transform: translate(-50%, -70%);
+    }
+    100% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #pizzas {
+        flex-direction: column;
+    }
+
+    .pizza-item {
+        flex-direction: column;
+    }
 }

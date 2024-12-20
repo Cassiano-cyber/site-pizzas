@@ -72,6 +72,7 @@ nav ul li a:hover {
     }
 }
 
+/* Footer */
 footer {
     background-color: var(--primary-color);
     color: var(--white-color);
@@ -113,34 +114,54 @@ section {
 .pizza-item button {
     background-color: var(--primary-color);
     color: var(--white-color);
-    padding: 12px 24px;
+    padding: 15px 30px; /* Aumentando o padding para um botão mais largo */
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius); /* Usando a variável de border-radius */
     cursor: pointer;
-    font-size: 1.2em; /* Aumentando o tamanho da fonte */
-    transition: background-color 0.3s ease;
-} /* Estilos para as imagens */
-.pizza-item img {
-    width: 250px; /* Reduzindo o tamanho da imagem */
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.3em; /* Aumentando o tamanho da fonte para dar mais destaque */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para o botão */
+    position: relative; /* Para usar com animações de partículas */
 }
 
-/* Estilos para os botões */
-.pizza-item button {
+/* Efeito de hover para os botões */
+.pizza-item button:hover {
+    background-color: var(--explosion-color); /* Mudando para a cor de explosão no hover */
+    transform: scale(1.1); /* Aumentando o botão um pouco para chamar a atenção */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumentando a sombra no hover */
+}
+
+/* Efeito de clique nos botões */
+.pizza-item button:active {
+    transform: scale(0.95); /* Simulando um efeito de pressionamento */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra mais suave no clique */
+}
+
+/* Estilo para o botão de finalizar pedido */
+.finalizar-pedido-button {
     background-color: var(--primary-color);
     color: var(--white-color);
-    padding: 12px 24px;
+    padding: 15px 30px;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     cursor: pointer;
-    font-size: 1.2em; /* Aumentando o tamanho da fonte */
-    transition: background-color 0.3s ease;
+    font-size: 1.3em;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
-.pizza-item button:hover {
+/* Efeito de hover para o botão de finalizar pedido */
+.finalizar-pedido-button:hover {
     background-color: var(--explosion-color);
+    transform: scale(1.1); /* Aumenta o botão no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta a sombra no hover */
+}
+
+/* Efeito de clique nos botões de finalizar pedido */
+.finalizar-pedido-button:active {
+    transform: scale(0.95); /* Simula o efeito de pressionamento */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Animação de Fogos de Artifício */
@@ -162,8 +183,8 @@ section {
 /* Estilo para as bolinhas */
 .firework-particle {
   position: absolute;
-  width: 15px; /* Aumentando o tamanho das bolinhas */
-  height: 15px; /* Aumentando o tamanho das bolinhas */
+  width: 20px; /* Aumentando o tamanho das bolinhas */
+  height: 20px; /* Aumentando o tamanho das bolinhas */
   border-radius: 50%;
   background-color: #ff6347;
   animation: fireworks 2s ease-out forwards;

@@ -15,6 +15,8 @@
     --border-radius: 8px;
     --explosion-color: #ff8c00; /* Laranja vibrante para a explosão */
     --animation-duration: 2s; /* Duração da animação */
+    --button-padding: 10px 20px; /* Padding para os botões */
+    --button-font-size: 1.2em; /* Tamanho da fonte dos botões */
 }
 
 /* Estilos Globais */
@@ -23,7 +25,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
-    font-size: 1.3rem;
+    font-size: 1.5rem; /* Aumento do tamanho da fonte */
     color: var(--text-color);
     overflow-x: hidden; /* Remove a barra de rolagem horizontal */
 }
@@ -35,7 +37,7 @@ header {
     padding: 1.5em 0;
     text-align: center;
     box-shadow: var(--box-shadow);
-    font-size: 1.5em;
+    font-size: 2em; /* Aumento do tamanho da fonte */
     position: relative; /* Para posicionar a animação */
 }
 
@@ -89,7 +91,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: var(--secondary-color);
-    font-size: 1.2em;
+    font-size: 1.5em; /* Aumento do tamanho da fonte */
     padding: 0.5em 0;
     display: block;
 }
@@ -104,7 +106,7 @@ nav ul li a:hover {
         padding: 1em 0;
     }
     nav ul li a {
-        font-size: 1em;
+        font-size: 1.2em; /* Aumento do tamanho da fonte */
     }
 }
 
@@ -116,7 +118,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    font-size: 1.3rem;
+    font-size: 1.5rem; /* Aumento do tamanho da fonte */
 }
 
 /* Seção Principal */
@@ -128,7 +130,7 @@ section {
     margin-bottom: 2em;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    font-size: 1.3rem;
+    font-size: 1.5rem; /* Aumento do tamanho da fonte */
     background-color: var(--background-color);
 }
 
@@ -144,7 +146,7 @@ section {
 /* Estilos para as imagens */
 .pizza-item img {
     width: 100%;
-    max-width: 300px;
+    max-width: 250px; /* Diminuição do tamanho da imagem */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease; /* Transição para o efeito hover */
@@ -169,28 +171,29 @@ section {
 }
 
 .pizza-item h3 {
-    font-size: 1.2em;
+    font-size: 1.5em; /* Aumento do tamanho da fonte */
     margin-bottom: 5px;
 }
 
 .pizza-item p {
-    font-size: 1em;
+    font-size: 1.2em; /* Aumento do tamanho da fonte */
     margin-bottom: 10px;
     text-align: left;
 }
 
-.pizza-item button {
+/* Estilos para os botões */
+.pizza-item button, #checkoutButton {
     background-color: var(--primary-color);
     color: var(--white-color);
-    padding: 8px 16px;
+    padding: var(--button-padding); /* Aplicação do padding definido na variável */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: var(--button-font-size); /* Aplicação do tamanho da fonte definido na variável */
     transition: background-color 0.3s ease;
 }
 
-.pizza-item button:hover {
+.pizza-item button:hover, #checkoutButton:hover {
     background-color: var(--explosion-color);
 }
 
@@ -203,7 +206,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    font-size: 1.3rem;
+    font-size: 1.5rem; /* Aumento do tamanho da fonte */
 }
 
 /* Animação de ingredientes saltando */

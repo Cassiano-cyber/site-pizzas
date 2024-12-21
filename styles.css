@@ -6,13 +6,14 @@
 
 /* Variáveis CSS */
 :root {
-    --primary-color: #ff6347; /* Cor principal */
-    --secondary-color: #ffd700; /* Cor secundária */
-    --background-color: #f5ddb0; /* Cor de fundo */
-    --text-color: #b7870e; /* Cor do texto */
-    --white-color: #ffffff; /* Cor branca */
-    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra de caixa */
-    --border-radius: 8px; /* Bordas arredondadas */
+    --primary-color: #ff6347;
+    --secondary-color: #ffd700;
+    --background-color: #f5ddb0;
+    --text-color: #b7870e;
+    --white-color: #ffffff;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --explosion-color: #ff9900; /* Cor para o efeito hover dos botões */
 }
 
 /* Estilos Globais */
@@ -21,7 +22,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
-    font-size: 1.3rem;
+    font-size: 1.5rem; /* Aumentando o tamanho da fonte */
     color: var(--text-color);
 }
 
@@ -29,10 +30,10 @@ body {
 header {
     background-color: var(--primary-color);
     color: var(--white-color);
-    padding: 1.5em 0;
+    padding: 2em 0; /* Aumentando o padding */
     text-align: center;
     box-shadow: var(--box-shadow);
-    font-size: 1.5em;
+    font-size: 2em; /* Aumentando o tamanho da fonte */
 }
 
 /* Menu de Navegação */
@@ -52,8 +53,8 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: var(--secondary-color);
-    font-size: 1.2em;
-    padding: 0.5em 0;
+    font-size: 1.5em; /* Aumentando o tamanho da fonte */
+    padding: 0.8em 0; /* Aumentando o padding */
     display: block;
 }
 
@@ -71,6 +72,7 @@ nav ul li a:hover {
     }
 }
 
+/* Footer */
 footer {
     background-color: var(--primary-color);
     color: var(--white-color);
@@ -79,7 +81,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    font-size: 1.3rem;
+    font-size: 1.5rem; /* Aumentando o tamanho da fonte */
 }
 
 /* Seção Principal */
@@ -91,7 +93,7 @@ section {
     margin-bottom: 2em;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    font-size: 1.3rem;
+    font-size: 1.5rem; /* Aumentando o tamanho da fonte */
     background-color: var(--background-color);
 }
 
@@ -100,86 +102,46 @@ section {
     background-color: #edd19b;
 }
 
-/* Categorias de Produtos */
-.product-category {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 40px;
-    padding: 2em;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    width: 100%;
-}
-
-.product-category.salgados {
-    background-color: #ecbd66;
-    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.6);
-    color: var(--white-color);
-}
-
-.product-category.salgados-veganos {
-    background-color: #77cf614d;
-    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.6);
-    color: var(--white-color);
-}
-
-.product-category.pizzas {
-    background-color: #d8343894;
-    box-shadow: 0 4px 8px rgba(255, 0, 39, 0.6);
-    color: var(--white-color);
-}
-
-/* Estilos para as imagens */
-.product-category img {
-    width: 100%; /* Ajuste da largura para não ultrapassar a tela */
-    max-width: 600px; /* Limita a largura da imagem */
+/* Estilos para as imagens das pizzas */
+.pizza-item img {
+    width: 100%; /* Ajusta para 100% da largura disponível */
+    max-width: 400px; /* Limita o tamanho máximo da imagem */
     height: auto;
-    border-radius: var(--border-radius);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 1em;
 }
 
-/* Responsividade para imagens em dispositivos móveis */
-@media (max-width: 768px) {
-    .product-category img {
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* Botões "Adicionar ao Carrinho" */
+/* Estilos para os botões */
 .pizza-item button {
-    background-color: var(--primary-color); /* Cor primária */
+    background-color: var(--primary-color);
     color: var(--white-color);
-    padding: 12px 30px; /* Ajuste do padding */
+    padding: 15px 30px; /* Aumentando o padding para um botão mais largo */
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius); /* Usando a variável de border-radius */
     cursor: pointer;
-    font-size: 1.3em;
+    font-size: 1.3em; /* Aumentando o tamanho da fonte para dar mais destaque */
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: block;
-    width: auto;
-    margin: 1em auto;
-    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para o botão */
+    position: relative; /* Para usar com animações de partículas */
 }
 
-/* Efeito hover para os botões */
+/* Efeito de hover para os botões */
 .pizza-item button:hover {
-    background-color: var(--secondary-color); /* Cor secundária no hover */
-    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta a sombra no hover */
+    background-color: var(--explosion-color); /* Mudando para a cor de explosão no hover */
+    transform: scale(1.1); /* Aumentando o botão um pouco para chamar a atenção */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumentando a sombra no hover */
 }
 
 /* Efeito de clique nos botões */
 .pizza-item button:active {
-    transform: scale(0.95); /* Simula o efeito de pressionamento */
+    transform: scale(0.95); /* Simulando um efeito de pressionamento */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra mais suave no clique */
 }
 
-/* Botão de Checkout */
-#checkoutButton {
-    background-color: var(--secondary-color); /* Cor secundária */
+/* Estilos para o botão de finalizar pedido */
+.finalizar-pedido-button {
+    background-color: var(--primary-color);
     color: var(--white-color);
     padding: 15px 30px;
     border: none;
@@ -189,142 +151,123 @@ section {
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
-    display: block;
-    width: 100%;
-    margin-top: 1em;
-    text-align: center;
 }
 
-/* Efeito hover para o botão de checkout */
-#checkoutButton:hover {
-    background-color: #ff6347; /* Cor primária no hover para checkout */
-    transform: scale(1.1);
+/* Efeito de hover para o botão de finalizar pedido */
+.finalizar-pedido-button:hover {
+    background-color: var(--explosion-color);
+    transform: scale(1.1); /* Aumenta o botão no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta a sombra no hover */
+}
+
+/* Efeito de clique nos botões de finalizar pedido */
+.finalizar-pedido-button:active {
+    transform: scale(0.95); /* Simula o efeito de pressionamento */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para o botão 'Add to Cart' */
+button.add-to-cart {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 12px 25px; /* Tamanho adequado de padding */
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1.3em;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Efeito de hover para o botão 'Add to Cart' */
+button.add-to-cart:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Efeito de clique no botão de checkout */
-#checkoutButton:active {
+/* Efeito de clique no botão 'Add to Cart' */
+button.add-to-cart:active {
     transform: scale(0.95);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Espaçamento entre a descrição e o botão */
-.pizza-item .description {
-    margin-bottom: 1em; /* Espaçamento inferior entre a descrição e o botão */
-}
-
-/* Estilo para a seção de avaliações */
-#avaliacoes {
-    background-color: var(--white-color);
-    padding: 2em;
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
-    margin-top: 2em;
-}
-
-#avaliacoes h2 {
-    text-align: center;
-    font-size: 2em;
-    color: #333;
-}
-
-#avaliacoes-lista {
-    text-align: left;
-    margin-top: 1em;
-    padding: 1em;
-    background-color: #dedede;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-}
-
-#avaliacoes h3 {
-    font-size: 1.5em;
-    color: var(--primary-color);
-    margin-top: 1em;
-}
-
-#avaliacao-form {
-    margin-top: 1.5em;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
-#avaliacao-form input, #avaliacao-form textarea {
-    width: 100%;
-    padding: 0.75em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-}
-
-#avaliacao-form button {
+/* Estilos para o botão 'Checkout' */
+button#checkoutButton {
     background-color: var(--primary-color);
     color: var(--white-color);
+    padding: 15px 30px;
     border: none;
-    padding: 0.75em;
-    border-radius: 4px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#avaliacao-form button:hover {
-    background-color: #e5533d;
-}
-
-/* Seção de Contato */
-#contact {
-    background-color: #edd19b;
-    padding: 2em;
-    box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
-    margin-top: 2em;
-}
-
-#contact h2 {
-    text-align: center;
-    font-size: 2em;
-    color: #333;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    margin-top: 1.5em;
-}
-
-.contact-form .form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form label {
-    font-weight: bold;
-    margin-bottom: 0.5em;
-    color: var(--primary-color);
-}
-
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 0.75em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-}
-
-.contact-button {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    border: none;
-    padding: 0.75em;
-    border-radius: 4px;
-    font-size: 1em;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 1.3em;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.contact-button:hover {
-    background-color: #e5533d;
+/* Efeito de hover para o botão 'Checkout' */
+button#checkoutButton:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Efeito de clique no botão 'Checkout' */
+button#checkoutButton:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade para imagens das pizzas */
+@media (max-width: 768px) {
+    .pizza-item img {
+        width: 100%; /* Ajusta para 100% da largura disponível */
+        max-width: 300px; /* Reduz o tamanho máximo da imagem */
+    }
+    
+    button.add-to-cart,
+    button#checkoutButton {
+        font-size: 1.2em;
+        padding: 10px 20px; /* Ajustando o padding */
+    }
+}
+
+/* Animação de Fogos de Artifício */
+@keyframes fireworks {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Estilo para as bolinhas */
+.firework-particle {
+  position: absolute;
+  width: 20px; /* Aumentando o tamanho das bolinhas */
+  height: 20px; /* Aumentando o tamanho das bolinhas */
+  border-radius: 50%;
+  background-color: #ff6347;
+  animation: fireworks 2s ease-out forwards;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    header {
+        padding: 1em 0;
+    }
+    nav ul li a {
+        font-size: 1em;
+    }
+    .firework-particle {
+        width: 15px; /* Tamanho das bolinhas ajustado para telas pequenas */
+        height: 15px;
+    }
 }

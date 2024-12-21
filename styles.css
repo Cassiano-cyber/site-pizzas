@@ -124,6 +124,7 @@ section {
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para o botão */
     position: relative; /* Para usar com animações de partículas */
+    margin-top: 20px; /* Adicionando espaçamento entre o texto e o botão */
 }
 
 /* Efeito de hover para os botões */
@@ -177,6 +178,7 @@ button.add-to-cart {
     font-size: 1.3em;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Adicionando espaçamento entre o texto e o botão */
 }
 
 /* Efeito de hover para o botão 'Add to Cart' */
@@ -271,3 +273,5 @@ button#checkoutButton:active {
         height: 15px;
     }
 }
+
+    

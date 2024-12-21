@@ -13,7 +13,6 @@
     --white-color: #ffffff;
     --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     --border-radius: 8px;
-    --explosion-color: #ff9900; /* Cor para o efeito hover dos botões */
 }
 
 /* Estilos Globais */
@@ -22,7 +21,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
-    font-size: 1.5rem; /* Aumentando o tamanho da fonte */
+    font-size: 1.3rem;
     color: var(--text-color);
 }
 
@@ -30,10 +29,10 @@ body {
 header {
     background-color: var(--primary-color);
     color: var(--white-color);
-    padding: 2em 0; /* Aumentando o padding */
+    padding: 1.5em 0;
     text-align: center;
     box-shadow: var(--box-shadow);
-    font-size: 2em; /* Aumentando o tamanho da fonte */
+    font-size: 1.5em;
 }
 
 /* Menu de Navegação */
@@ -53,8 +52,8 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: var(--secondary-color);
-    font-size: 1.5em; /* Aumentando o tamanho da fonte */
-    padding: 0.8em 0; /* Aumentando o padding */
+    font-size: 1.2em;
+    padding: 0.5em 0;
     display: block;
 }
 
@@ -81,7 +80,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    font-size: 1.5rem; /* Aumentando o tamanho da fonte */
+    font-size: 1.3rem;
 }
 
 /* Seção Principal */
@@ -93,55 +92,75 @@ section {
     margin-bottom: 2em;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
-    font-size: 1.5rem; /* Aumentando o tamanho da fonte */
+    font-size: 1.3rem;
     background-color: var(--background-color);
 }
 
 /* Seção de Produtos */
 #products {
     background-color: #edd19b;
-    margin-bottom: 1em;
+}
+
+/* Estilo para as pizzas */
+.pizza-item {
+    margin-bottom: 2em;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1em;
+    background-color: var(--white-color);
 }
 
 /* Estilos para as imagens das pizzas */
 .pizza-item img {
-    width: 100%; /* Ajusta para 100% da largura disponível */
-    max-width: 400px; /* Limita o tamanho máximo da imagem */
+    width: 100%; /* A imagem se ajusta à largura da seção */
+    max-width: 250px; /* Limite máximo da imagem */
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 1em;
+    margin-bottom: 1em; /* Espaçamento entre a imagem e a descrição */
 }
 
-/* Estilos para os botões */
+/* Estilo para as descrições das pizzas */
+.pizza-item .description {
+    margin-bottom: 1em; /* Espaçamento inferior entre a descrição e o botão */
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Estilo para os botões */
 .pizza-item button {
     background-color: var(--primary-color);
     color: var(--white-color);
-    padding: 15px 30px; /* Aumentando o padding para um botão mais largo */
+    padding: 15px 30px; /* Ajuste do padding */
     border: none;
-    border-radius: var(--border-radius); /* Usando a variável de border-radius */
+    border-radius: var(--border-radius);
     cursor: pointer;
-    font-size: 1.3em; /* Aumentando o tamanho da fonte para dar mais destaque */
+    font-size: 1.3em;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para o botão */
-    position: relative; /* Para usar com animações de partículas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: block; /* Força o botão a ocupar uma nova linha */
+    width: 100%; /* O botão ocupa toda a largura disponível */
+    margin-top: 1em; /* Distância entre a descrição e o botão */
+    text-align: center; /* Centraliza o texto dentro do botão */
 }
 
-/* Efeito de hover para os botões */
+/* Efeito hover para os botões */
 .pizza-item button:hover {
-    background-color: var(--explosion-color); /* Mudando para a cor de explosão no hover */
-    transform: scale(1.1); /* Aumentando o botão um pouco para chamar a atenção */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumentando a sombra no hover */
+    background-color: #ff9900; /* Cor de explosão no hover */
+    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta a sombra no hover */
 }
 
 /* Efeito de clique nos botões */
 .pizza-item button:active {
-    transform: scale(0.95); /* Simulando um efeito de pressionamento */
+    transform: scale(0.95); /* Simula o efeito de pressionamento */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra mais suave no clique */
 }
 
-/* Estilos para o botão de finalizar pedido */
-.finalizar-pedido-button {
+/* Ajuste para a seção de checkout */
+#checkoutButton {
     background-color: var(--primary-color);
     color: var(--white-color);
     padding: 15px 30px;
@@ -152,132 +171,36 @@ section {
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
+    display: block;
+    width: 100%;
+    margin-top: 1em;
+    text-align: center;
 }
 
-/* Efeito de hover para o botão de finalizar pedido */
-.finalizar-pedido-button:hover {
-    background-color: var(--explosion-color);
-    transform: scale(1.1); /* Aumenta o botão no hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta a sombra no hover */
-}
-
-/* Efeito de clique nos botões de finalizar pedido */
-.finalizar-pedido-button:active {
-    transform: scale(0.95); /* Simula o efeito de pressionamento */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilos para o botão 'Add to Cart' */
-button.add-to-cart {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    padding: 15px 30px; /* Aumentando o padding */
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    font-size: 1.3em;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Efeito de hover para o botão 'Add to Cart' */
-button.add-to-cart:hover {
-    background-color: var(--secondary-color);
-    transform: scale(1.05);
+/* Efeito hover para o botão de checkout */
+#checkoutButton:hover {
+    background-color: #ff9900; /* Cor de explosão no hover */
+    transform: scale(1.1);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Efeito de clique no botão 'Add to Cart' */
-button.add-to-cart:active {
+/* Efeito de clique no botão de checkout */
+#checkoutButton:active {
     transform: scale(0.95);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilos para o botão 'Checkout' */
-button#checkoutButton {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    padding: 15px 30px;
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    font-size: 1.3em;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Efeito de hover para o botão 'Checkout' */
-button#checkoutButton:hover {
-    background-color: var(--secondary-color);
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Efeito de clique no botão 'Checkout' */
-button#checkoutButton:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Espaçamento entre a descrição da pizza e o botão "Adicionar ao Carrinho" */
-.pizza-item .description {
-    margin-bottom: 1.5em; /* Adiciona espaço entre a descrição e o botão */
-}
-
-/* Responsividade para imagens das pizzas */
-@media (max-width: 768px) {
-    .pizza-item img {
-        width: 100%; /* Ajusta para 100% da largura disponível */
-        max-width: 300px; /* Reduz o tamanho máximo da imagem */
-    }
-    
-    button.add-to-cart,
-    button#checkoutButton {
-        font-size: 1.2em;
-        padding: 10px 20px; /* Ajustando o padding */
-    }
-
-    .pizza-item .description {
-        margin-bottom: 1em; /* Menos espaçamento em telas menores */
-    }
-}
-
-/* Animação de Fogos de Artifício */
-@keyframes fireworks {
-  0% {
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 1;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.5);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(2.5);
-    opacity: 0;
-  }
-}
-
-/* Estilo para as bolinhas */
-.firework-particle {
-  position: absolute;
-  width: 25px; /* Aumentando o tamanho das bolinhas */
-  height: 25px; /* Aumentando o tamanho das bolinhas */
-  border-radius: 50%;
-  background-color: #ff6347;
-  animation: fireworks 2s ease-out forwards;
 }
 
 /* Responsividade para telas pequenas */
 @media (max-width: 768px) {
-    header {
-        padding: 1em 0;
+    .pizza-item img {
+        max-width: 100%; /* Faz a imagem ocupar toda a largura disponível */
     }
-    nav ul li a {
-        font-size: 1em;
+
+    .pizza-item button {
+        width: 100%; /* Faz o botão ocupar toda a largura disponível em telas pequenas */
     }
-    .firework-particle {
-        width: 20px; /* Tamanho das bolinhas ajustado para telas pequenas */
-        height: 20px;
+
+    #checkoutButton {
+        width: 100%; /* Ajuste no botão de checkout para ocupar toda a largura */
     }
 }

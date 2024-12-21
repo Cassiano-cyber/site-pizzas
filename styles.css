@@ -64,11 +64,32 @@ nav ul li a:hover {
 
 /* Responsividade para telas pequenas */
 @media (max-width: 768px) {
+    body {
+        font-size: 1.3rem; /* Ajustando o tamanho da fonte para dispositivos móveis */
+    }
     header {
-        padding: 1em 0;
+        padding: 1.5em 0;
+    }
+    header h1 {
+        font-size: 1.5em; /* Ajustando o tamanho da fonte do título no header */
+    }
+    nav ul {
+        flex-direction: column; /* Empilhando os itens de navegação para telas menores */
+        gap: 1em;
     }
     nav ul li a {
-        font-size: 1em;
+        font-size: 1.2em; /* Ajustando o tamanho da fonte nos links do menu */
+        padding: 0.5em 0; /* Ajustando o padding dos links */
+    }
+    footer {
+        font-size: 1.2rem;
+    }
+    section {
+        padding: 1.5em; /* Ajustando o padding das seções */
+        font-size: 1.2rem; /* Ajustando o tamanho da fonte nas seções */
+    }
+    .pizza-item img {
+        width: 150px; /* Ajustando o tamanho das imagens para dispositivos móveis */
     }
 }
 
@@ -137,20 +158,6 @@ section {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra mais suave no clique */
 }
 
-/* Estilo para o botão de finalizar pedido */
-.finalizar-pedido-button {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    padding: 15px 30px;
-    border: none;
-    border-radius: var(--border-radius);
-    cursor: pointer;
-    font-size: 1.3em;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
 /* Efeito de hover para o botão de finalizar pedido */
 .finalizar-pedido-button:hover {
     background-color: var(--explosion-color);
@@ -164,50 +171,46 @@ section {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Animação de Fogos de Artifício */
+/* Ajuste para animação de partículas de fogos de artifício */
 @keyframes fireworks {
-  0% {
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 1;
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.5);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(2.5);
-    opacity: 0;
-  }
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+    }
 }
 
 /* Estilo para as bolinhas */
 .firework-particle {
-  position: absolute;
-  width: 20px; /* Aumentando o tamanho das bolinhas */
-  height: 20px; /* Aumentando o tamanho das bolinhas */
-  border-radius: 50%;
-  background-color: #ff6347;
-  animation: fireworks 2s ease-out forwards;
+    position: absolute;
+    width: 20px; /* Aumentando o tamanho das bolinhas */
+    height: 20px; /* Aumentando o tamanho das bolinhas */
+    border-radius: 50%;
+    background-color: #ff6347;
+    animation: fireworks 2s ease-out forwards;
 }
 
 /* Criação das bolinhas */
 .fireworks-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-/* Posicionamento aleatório das bolinhas */
+/* A correção: sem o uso do random() em CSS */
 .firework-particle {
-  top: random(100%);
-  left: random(100%);
-}
-
-/* Criação das bolinhas com cores aleatórias */
-.firework-particle {
-  background-color: hsl(random(360), 50%, 50%);
+    top: 20%;
+    left: 30%;
+    animation: fireworks 2s ease-out forwards;
 }

@@ -170,7 +170,7 @@ section {
 button.add-to-cart {
     background-color: var(--secondary-color);
     color: var(--white-color);
-    padding: 12px 25px; /* Tamanho adequado de padding */
+    padding: 15px 30px; /* Aumentando o padding */
     border: none;
     border-radius: var(--border-radius);
     cursor: pointer;
@@ -218,6 +218,11 @@ button#checkoutButton:active {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Espaçamento entre a descrição da pizza e o botão "Adicionar ao Carrinho" */
+.pizza-item .description {
+    margin-bottom: 1.5em; /* Adiciona espaço entre a descrição e o botão */
+}
+
 /* Responsividade para imagens das pizzas */
 @media (max-width: 768px) {
     .pizza-item img {
@@ -229,6 +234,10 @@ button#checkoutButton:active {
     button#checkoutButton {
         font-size: 1.2em;
         padding: 10px 20px; /* Ajustando o padding */
+    }
+
+    .pizza-item .description {
+        margin-bottom: 1em; /* Menos espaçamento em telas menores */
     }
 }
 
@@ -251,8 +260,8 @@ button#checkoutButton:active {
 /* Estilo para as bolinhas */
 .firework-particle {
   position: absolute;
-  width: 20px; /* Aumentando o tamanho das bolinhas */
-  height: 20px; /* Aumentando o tamanho das bolinhas */
+  width: 25px; /* Aumentando o tamanho das bolinhas */
+  height: 25px; /* Aumentando o tamanho das bolinhas */
   border-radius: 50%;
   background-color: #ff6347;
   animation: fireworks 2s ease-out forwards;
@@ -267,7 +276,7 @@ button#checkoutButton:active {
         font-size: 1em;
     }
     .firework-particle {
-        width: 18px; /* Tamanho das bolinhas ajustado para telas pequenas */
-        height: 18px;
+        width: 20px; /* Tamanho das bolinhas ajustado para telas pequenas */
+        height: 20px;
     }
 }

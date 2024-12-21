@@ -104,12 +104,18 @@ section {
 
 /* Estilos para as imagens das pizzas */
 .pizza-item img {
-    width: 100%; /* Ajusta para 100% da largura disponível */
-    max-width: 400px; /* Limita o tamanho máximo da imagem */
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-bottom: 1em;
+.menu-item img {
+width: 100%;
+height: auto;
+max-width: 300px;
+margin:
+0 auto;
+display: block;
+}
+@media (min-width: 769px) {
+.menu-item img {
+max-width: 400px;
+}
 }
 
 /* Estilos para os botões */

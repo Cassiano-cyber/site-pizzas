@@ -100,6 +100,7 @@ section {
 /* Seção de Produtos */
 #products {
     background-color: #edd19b;
+    margin-bottom: 1em;
 }
 
 /* Estilos para as imagens das pizzas */
@@ -168,7 +169,7 @@ section {
 
 /* Estilos para o botão 'Add to Cart' */
 button.add-to-cart {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--white-color);
     padding: 15px 30px; /* Aumentando o padding */
     border: none;
@@ -181,7 +182,7 @@ button.add-to-cart {
 
 /* Efeito de hover para o botão 'Add to Cart' */
 button.add-to-cart:hover {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }

@@ -106,18 +106,18 @@ section {
 .pizza-item img {
     width: 100%; /* Ajusta para 100% da largura disponível */
     max-width: 300px; /* Limita o tamanho máximo da imagem */
-    height: 700px;
+    height: auto; /* Ajusta a altura automaticamente */
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 1em;
-    margin: 525px;
     display: block;
 }
-@media (min-width 769px) {
-    .pizza-item img {
-        max-width: 400px}
-}
 
+@media (min-width: 769px) {
+    .pizza-item img {
+        max-width: 400px;
+    }
+}
 /* Estilos para os botões */
 .pizza-item button {
     background-color: var(--primary-color);
@@ -224,12 +224,6 @@ button#checkoutButton:hover {
 button#checkoutButton:active {
     transform: scale(0.95);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-
-    button.add-to-cart,
-    button#checkoutButton {
-        font-size: 1.2em;
-        padding: 10px 20px; /* Ajustando o padding */
-    }
 }
 
 /* Animação de Fogos de Artifício */
@@ -272,4 +266,3 @@ button#checkoutButton:active {
     }
 }
 
-    

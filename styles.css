@@ -106,11 +106,11 @@ section {
 .pizza-item img {
     width: 100%; /* Ajusta para 100% da largura disponível */
     max-width: 300px; /* Limita o tamanho máximo da imagem */
-    height: auto;
-    border-radius: 10px;
+    height: 700px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 1em;
-    margin: 0 auto;
+    margin: 525px;
     display: block;
 }
 @media (min-width 769px) {
